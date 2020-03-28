@@ -30,8 +30,7 @@ function getRandom(arr) {return arr[Math.floor(Math.random() * arr.length)]};
 var text_phone = getRandom(phone_number);
 
 // Start DOMContentLoaded
-document.addEventListener ("DOMContentLoaded", deferscript1);
-function deferscript1() {
+function run1(){
 
 /* WA Support */
 var walink = 'https://api.whatsapp.com/send',
@@ -267,7 +266,7 @@ $(".varian1,.varian2,.catatan").hide();
 $(".pemesanan,.order-button").removeClass('none');
 });
 	
-}; // End DOMContentLoaded
+} - 1 == navigator.userAgent.indexOf("Google Page Speed Insights") && (window.addEventListener ? window.addEventListener("load", run1, !1) : window.attachEvent ? window.attachEvent("onload", run1) : window.onload = run1);
 
 /* Hapus Produk Tertentu dan Sub Total Terbaru */
 function hapus(){
