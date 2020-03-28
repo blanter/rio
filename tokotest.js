@@ -1,3 +1,6 @@
+// Start DOMContentLoaded
+document.addEventListener ("DOMContentLoaded", deferscript1);
+function deferscript1() {
 // GLOBAL SCRIPT
 /* Biggest Online Shop Project */
 document.getElementById('checkout-box').innerHTML = localStorage.getItem('ck');
@@ -395,3 +398,5 @@ $('#relatedframe-posts,.iframe-product').bind('load', function(){
 resizeIframe(this);
 $(this).addClass('loaded');
 });
+
+};
