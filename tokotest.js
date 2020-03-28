@@ -30,7 +30,8 @@ function getRandom(arr) {return arr[Math.floor(Math.random() * arr.length)]};
 var text_phone = getRandom(phone_number);
 
 // Start DOMContentLoaded
-function run(){
+document.addEventListener ("DOMContentLoaded", deferscript1);
+function deferscript1() {
 
 /* WA Support */
 var walink = 'https://api.whatsapp.com/send',
@@ -265,6 +266,8 @@ $(".product-cart #hapus").remove();
 $(".varian1,.varian2,.catatan").hide();
 $(".pemesanan,.order-button").removeClass('none');
 });
+	
+}; // End DOMContentLoaded
 
 /* Hapus Produk Tertentu dan Sub Total Terbaru */
 function hapus(){
@@ -289,6 +292,7 @@ localStorage.setItem('sub2', 'Rp. 0');
 } else {}
 };
 
+function run(){
 hapus();
 /* Live Link and Deskripsi */
 $(function(){$("#comments p").find("a").contents().unwrap()});$(".deskripsi-produk").appendTo("#deskripsi");
