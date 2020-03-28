@@ -1,5 +1,3 @@
-// Start DOMContentLoaded
-function run(){
 // GLOBAL SCRIPT
 /* Biggest Online Shop Project */
 document.getElementById('checkout-box').innerHTML = localStorage.getItem('ck');
@@ -30,6 +28,9 @@ $(".blanter-cart-pages #checkout-box").html(getproduct);
 /* Random multi Number */
 function getRandom(arr) {return arr[Math.floor(Math.random() * arr.length)]};
 var text_phone = getRandom(phone_number);
+
+// Start DOMContentLoaded
+function run(){
 
 /* WA Support */
 var walink = 'https://api.whatsapp.com/send',
@@ -358,6 +359,8 @@ $(document).on("click", "#wabox-send", function() {
 		window.open(wabox_res, '_blank')
 	}
 });
+	
+} - 1 == navigator.userAgent.indexOf("Google Page Speed Insights") && (window.addEventListener ? window.addEventListener("load", run, !1) : window.attachEvent ? window.attachEvent("onload", run) : window.onload = run);
 
 // Tab And Description
 function rudrSwitchTab(a,b){var c,d=document.getElementsByClassName("tabcontent");for(c=0;c<d.length;c++)d[c].style.display="none";document.getElementById(b).style.display="block";var c,d=document.getElementsByClassName("tabmenu");for(c=0;c<d.length;c++)d[c].className="tabmenu";document.getElementById(a).className="tabmenu active"};
@@ -397,5 +400,3 @@ $('#relatedframe-posts,.iframe-product').bind('load', function(){
 resizeIframe(this);
 $(this).addClass('loaded');
 });
-
-} - 1 == navigator.userAgent.indexOf("Google Page Speed Insights") && (window.addEventListener ? window.addEventListener("load", run, !1) : window.attachEvent ? window.attachEvent("onload", run) : window.onload = run);
