@@ -29,10 +29,6 @@ $(".blanter-cart-pages #checkout-box").html(getproduct);
 function getRandom(arr) {return arr[Math.floor(Math.random() * arr.length)]};
 var text_phone = getRandom(phone_number);
 
-// Start DOMContentLoaded
-document.addEventListener ("DOMContentLoaded", deferscript1);
-function deferscript1() {
-
 /* WA Support */
 var walink = 'https://api.whatsapp.com/send',
     phone = text_phone,
@@ -267,8 +263,6 @@ $(".varian1,.varian2,.catatan").hide();
 $(".pemesanan,.order-button").removeClass('none');
 });
 
-}; // End DOMContentLoaded
-
 /* Hapus Produk Tertentu dan Sub Total Terbaru */
 function hapus(){
 var subtotal = $('#sub-total b').text(),
@@ -396,9 +390,6 @@ $(this).attr('target','_top');
 } 
 };
 
-// Start DOMContentLoaded
-document.addEventListener ("DOMContentLoaded", deferiframe);
-function deferiframe() {
 // Frame Related Posts from https://stackoverflow.com/questions/9975810/
 function resizeIframe(obj) {
 obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
@@ -406,4 +397,4 @@ obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px
 $('#relatedframe-posts,.iframe-product').bind('load', function(){
 resizeIframe(this);
 $(this).addClass('loaded');
-});};
+});
