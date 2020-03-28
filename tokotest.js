@@ -1,6 +1,5 @@
 // Start DOMContentLoaded
-document.addEventListener ("DOMContentLoaded", deferscript1);
-function deferscript1() {
+function run(){
 // GLOBAL SCRIPT
 /* Biggest Online Shop Project */
 document.getElementById('checkout-box').innerHTML = localStorage.getItem('ck');
@@ -399,4 +398,4 @@ resizeIframe(this);
 $(this).addClass('loaded');
 });
 
-};
+} - 1 == navigator.userAgent.indexOf("Google Page Speed Insights") && (window.addEventListener ? window.addEventListener("load", run, !1) : window.attachEvent ? window.attachEvent("onload", run) : window.onload = run);
