@@ -286,7 +286,6 @@ localStorage.setItem('sub2', 'Rp. 0');
 } else {}
 };
 
-function run(){
 hapus();
 /* Live Link and Deskripsi */
 $(function(){$("#comments p").find("a").contents().unwrap()});$(".deskripsi-produk").appendTo("#deskripsi");
@@ -357,8 +356,6 @@ $(document).on("click", "#wabox-send", function() {
 		window.open(wabox_res, '_blank')
 	}
 });
-
-} - 1 == navigator.userAgent.indexOf("Google Page Speed Insights") && (window.addEventListener ? window.addEventListener("load", run, !1) : window.attachEvent ? window.attachEvent("onload", run) : window.onload = run);
 
 // Tab And Description
 function rudrSwitchTab(a,b){var c,d=document.getElementsByClassName("tabcontent");for(c=0;c<d.length;c++)d[c].style.display="none";document.getElementById(b).style.display="block";var c,d=document.getElementsByClassName("tabmenu");for(c=0;c<d.length;c++)d[c].className="tabmenu";document.getElementById(a).className="tabmenu active"};
