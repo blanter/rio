@@ -9,13 +9,13 @@ $('#sub-total b').text(localStorage.getItem("sub2"));
 var select1 = $('#pilihan-1 label').text(),
 	select2 = $('#pilihan-2 label').text();
 
-/* 10000 to Rp 10.000 from Tokowhatsapp */
+/* Currency Format */
 function angkaToRp(angka) {
 var rupiah = '';    
 var angkarev = angka.toString().split('').reverse().join('');
 for(var i = 0; i < angkarev.length; i++) if(i%3 == 0) rupiah += angkarev.substr(i,3)+'.';
           return 'Rp. '+rupiah.split('',rupiah.length-1).reverse().join('');
-};
+}
 
 /* Activate Cart On Pages and Remove Header Cart */
 var cart_pages = $('.blanter-cart-pages').text();
@@ -167,28 +167,42 @@ var pic = document.getElementById('gambar').src,
 	pilihan2 = $("#pilihan-2").attr('data-selected'),
     catatan = document.getElementById("product-desc").value;
 
+/* Pemanggil Kode Unik ID Produk */
+var unique = teks,
+	addnumber = $('#cart-num').text(),
+	getnumber = parseInt(addnumber)+parseInt('1'),
+	unique = unique.replace(/\s/g,''),
+	checkit1 = $("#checkout-box").text();
+
+/* Jika Checkout Produk Ganda */
+if(checkit1.indexOf(teks) != -1){
+var getjumlah = $("#produk"+unique+"").children("b:nth-of-type(1)").text(),
+	JumlahFinal = parseInt(JumlahFinal)+parseInt(getjumlah),
+	getsubtotal1 = $("#produk"+unique+"").children(".harga").text().replace(/\D+/g, ''),
+	getsubtotal2 = $('#sub-total b').text().replace(/\D+/g, ''),
+	getsubtotal3 = parseInt(getsubtotal2)-parseInt(getsubtotal1),
+	getsubtotal = ""+angkaToRp(getsubtotal3)+"";
+	$("#produk"+unique+"").remove();
+}else{
+var getsubtotal = $('#sub-total b').text();
+};
+
 /* Rp 10.000 to 10000 with Jumlah Matematika */
 var rpnum = $("#harga").text(),
-    countnum = JumlahFinal,
-    replacenum = rpnum.replace(/\D+/g, ''),
+	countnum = JumlahFinal,
+	replacenum = rpnum.replace(/\D+/g, ''),
     last = replacenum * countnum,
     hargaend = angkaToRp(last),
-    getsubtotal = $('#sub-total b').text(),
     replacesub = getsubtotal.replace(/\D+/g, ''),
     gettotal = parseInt(last)+parseInt(replacesub);
     $('#sub-total b').text(angkaToRp(gettotal));
 
-/* Pemanggil Kode Unik ID Produk */
-var unique = teks,
-	addnumber = $('#cart-num').text(),
-	getnumber = parseInt(addnumber)+parseInt('1');
-unique = unique.replace(/\s/g,'');
 document.getElementById('no-product').innerHTML = '';
 document.getElementById('cart-num').innerHTML = getnumber;
-
+	
 /* Pemanggil Kotak Produk */
 document.getElementById('checkout-box').innerHTML += '<div class="product-cart" id="produk'+unique+'"><img src="'+pic+'"><a href="'+link+'">'+teks+'</a><sp>%0A</sp><div class="harga">'+hargaend+'</div><sp>%0A</sp>Jumlah : <b>'+JumlahFinal+'</b><sp>%0A</sp><div class="varian1">'+select1+' : <b>'+pilihan1+'</b></div><sp>%0A</sp><div class="varian2">'+select2+' : <b>'+pilihan2+'</b></div><sp>%0A</sp><div class="catatan">'+wa_catatan+' : <b>'+catatan+'</b></div><sp>%0A-------------------%0A</sp><a id="hapus" class="hapus" href="javascript:void" onclick="hapus(),getElementById(`produk'+unique+'`).remove();hapus2()">'+text_hapus+'</a></div>'
-$(".addtowish").toggleClass("aktif");
+$(".addtowish").addClass("aktif");
 
 /* Simpan Kotak Produk dan Sub Total Terbaru */
 var king = document.getElementById('checkout-box').innerHTML;
@@ -293,8 +307,7 @@ localStorage.setItem('sub2', 'Rp. 0');
 
 function run(){
 hapus();
-/* Live Link and Deskripsi */
-$(function(){$("#comments p").find("a").contents().unwrap()});$(".deskripsi-produk").appendTo("#deskripsi");
+$(".deskripsi-produk").appendTo("#deskripsi");
 
 // DEFER IFRAME
 var vidDefer = document.getElementsByTagName('iframe');
@@ -396,10 +409,12 @@ $(this).attr('target','_top');
 };
 
 // Frame Related Posts from https://stackoverflow.com/questions/9975810/
+document.addEventListener ("DOMContentLoaded", deferiframe);
+function deferiframe() {
 function resizeIframe(obj) {
 obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
 }
 $('#relatedframe-posts,.iframe-product').bind('load', function(){
 resizeIframe(this);
 $(this).addClass('loaded');
-});
+});};
