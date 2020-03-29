@@ -308,6 +308,12 @@ localStorage.setItem('sub2', 'Rp. 0');
 function run(){
 hapus();
 $(".deskripsi-produk").appendTo("#deskripsi");
+// DEFER IFRAME
+var vidDefer = document.getElementsByTagName('iframe');
+for (var i=0; i<vidDefer.length; i++) {
+    if(vidDefer[i].getAttribute('data-src')) {
+      vidDefer[i].setAttribute('src',vidDefer[i].getAttribute('data-src'));
+}};
 
 // FONTS
 function loadCSS(e, t, n) { "use strict"; var i = window.document.createElement("link"); var o = t || window.document.getElementsByTagName("script")[0]; i.rel = "stylesheet"; i.href = e; i.media = "only x"; o.parentNode.insertBefore(i, o); setTimeout(function () { i.media = n || "all" }) }
@@ -401,12 +407,6 @@ $(this).attr('target','_top');
 } 
 };
 
-// DEFER IFRAME
-var vidDefer = document.getElementsByTagName('iframe');
-for (var i=0; i<vidDefer.length; i++) {
-    if(vidDefer[i].getAttribute('data-src')) {
-      vidDefer[i].setAttribute('src',vidDefer[i].getAttribute('data-src'));
-}};
 // Frame Related Posts from https://stackoverflow.com/questions/9975810/
 function resizeIframe(obj) {
 obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
