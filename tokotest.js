@@ -411,12 +411,10 @@ $(this).attr('target','_top');
 } - 1 == navigator.userAgent.indexOf("Google Page Speed Insights") && (window.addEventListener ? window.addEventListener("load", run2, !1) : window.attachEvent ? window.attachEvent("onload", run2) : window.onload = run2);
 
 // Frame Related Posts from https://stackoverflow.com/questions/9975810/
-document.addEventListener ("DOMContentLoaded", deferiframe);
-function deferiframe() {
 function resizeIframe(obj) {
 obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
 }
 $('#relatedframe-posts,.iframe-product').bind('load', function(){
 resizeIframe(this);
 $(this).addClass('loaded');
-});};
+});
