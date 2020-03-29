@@ -380,7 +380,6 @@ var king = document.getElementById('checkout-box').innerHTML;
 localStorage.setItem('ck', king);
 };
 
-function run2(){
 // Label Khusus Related Posts from Tokowhatsapp
 var url_string = window.location.href;
 var urlParameter = new URL(url_string);
@@ -401,7 +400,6 @@ $(this).attr('target','_top');
 });
 } 
 };
-} - 1 == navigator.userAgent.indexOf("Google Page Speed Insights") && (window.addEventListener ? window.addEventListener("load", run2, !1) : window.attachEvent ? window.attachEvent("onload", run2) : window.onload = run2);
 
 // DEFER IFRAME
 var vidDefer = document.getElementsByTagName('iframe');
