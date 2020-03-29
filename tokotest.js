@@ -386,6 +386,10 @@ var king = document.getElementById('checkout-box').innerHTML;
 localStorage.setItem('ck', king);
 };
 
+// Start DOMContentLoaded
+document.addEventListener ("DOMContentLoaded", deferiframe);
+function deferiframe() {
+
 // Label Khusus Related Posts from Tokowhatsapp
 var url_string = window.location.href;
 var urlParameter = new URL(url_string);
@@ -415,3 +419,5 @@ $('#relatedframe-posts,.iframe-product').bind('load', function(){
 resizeIframe(this);
 $(this).addClass('loaded');
 });
+	
+}; // End DOMContentLoaded
