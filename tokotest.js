@@ -309,13 +309,6 @@ function run(){
 hapus();
 $(".deskripsi-produk").appendTo("#deskripsi");
 
-// DEFER IFRAME
-var vidDefer = document.getElementsByTagName('iframe');
-for (var i=0; i<vidDefer.length; i++) {
-    if(vidDefer[i].getAttribute('data-src')) {
-      vidDefer[i].setAttribute('src',vidDefer[i].getAttribute('data-src'));
-}};
-
 // FONTS
 function loadCSS(e, t, n) { "use strict"; var i = window.document.createElement("link"); var o = t || window.document.getElementsByTagName("script")[0]; i.rel = "stylesheet"; i.href = e; i.media = "only x"; o.parentNode.insertBefore(i, o); setTimeout(function () { i.media = n || "all" }) }
 loadCSS(""+css1+"");loadCSS(""+css2+"");loadCSS(""+css3+"");
@@ -410,6 +403,12 @@ $(this).attr('target','_top');
 };
 } - 1 == navigator.userAgent.indexOf("Google Page Speed Insights") && (window.addEventListener ? window.addEventListener("load", run2, !1) : window.attachEvent ? window.attachEvent("onload", run2) : window.onload = run2);
 
+// DEFER IFRAME
+var vidDefer = document.getElementsByTagName('iframe');
+for (var i=0; i<vidDefer.length; i++) {
+    if(vidDefer[i].getAttribute('data-src')) {
+      vidDefer[i].setAttribute('src',vidDefer[i].getAttribute('data-src'));
+}};
 // Frame Related Posts from https://stackoverflow.com/questions/9975810/
 function resizeIframe(obj) {
 obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
