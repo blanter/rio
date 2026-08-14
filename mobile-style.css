@@ -1,0 +1,216 @@
+/* Mobile Responsive Styles for watrusia.html */
+@media screen and (max-width: 991px) {
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+  
+  .page-wrapper {
+    overflow-x: hidden;
+  }
+
+  /* Reset container */
+  .page-wrapper .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    box-sizing: border-box !important;
+    left: 0 !important;
+  }
+
+  .widget-buttons__wrapper {
+    right: 15px !important;
+    bottom: 20px !important;
+    z-index: 99999 !important;
+  }
+  
+  .widget-buttons__wrapper .btn {
+    width: 45px !important;
+    height: 45px !important;
+  }
+
+  .widget-buttons__wrapper .header-search-btn {
+    width: 45px !important;
+    height: 45px !important;
+  }
+
+  /* Header adjustments */
+  .header-container {
+    justify-content: space-between !important;
+    padding: 10px 15px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .header-menu-item {
+    display: none !important; /* Hide desktop menu on mobile */
+  }
+
+  .header-right {
+    margin-left: auto !important;
+  }
+
+  .header-phone-block {
+    display: none !important; /* Hide phone text, keep icon */
+  }
+
+  .page-wrapper .header {
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative !important;
+    top: 0 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    transform: none !important;
+    height: auto !important;
+  }
+
+  /* Sections override */
+  section.section {
+    position: relative !important;
+    top: 0 !important;
+    transform: none !important;
+    height: auto !important;
+    padding: 40px 0 !important;
+  }
+
+  /* Typography */
+  .section-title {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+  }
+
+  /* First section (hero) */
+  .first .container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  .first-column {
+    width: 100% !important;
+    text-align: center !important;
+    padding-top: 20px !important;
+  }
+  
+  .first-title {
+    font-size: 32px !important;
+    line-height: 1.2 !important;
+  }
+  
+  .first-description {
+    margin: 15px auto !important;
+  }
+
+  .first-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+    margin-top: 30px !important;
+    position: relative !important;
+  }
+
+  .first-card {
+    width: 100% !important;
+    max-width: 350px !important;
+    position: relative !important;
+    transform: none !important;
+    margin: 0 auto !important;
+  }
+
+  .first-promotion {
+    position: static !important;
+    transform: none !important;
+    margin: 20px auto !important;
+    display: block !important;
+  }
+
+  .first-scroll-icon {
+    display: none !important;
+  }
+
+  /* Doctors section */
+  .doctors .container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .doctors-column {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .doctors-img {
+    position: relative !important;
+    top: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 300px !important;
+    height: auto !important;
+    margin-top: 20px !important;
+  }
+
+  /* Direction Section */
+  .direction .container {
+    text-align: center !important;
+  }
+  
+  .direction-slider {
+    position: relative !important;
+    top: 0 !important;
+    transform: none !important;
+    margin-top: 20px !important;
+  }
+
+  /* About section */
+  .about .container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  .about-side-wrap {
+    width: 100% !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+  }
+
+  .about-img {
+    position: relative !important;
+    top: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 300px !important;
+    height: auto !important;
+  }
+
+  /* General elements */
+  .wrap-column {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  .btn {
+    margin: 0 auto !important;
+  }
+  
+  img {
+    max-width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .section-title {
+    font-size: 24px !important;
+  }
+  
+  .first-title {
+    font-size: 26px !important;
+  }
+  
+  .header-call-btn span {
+    display: none !important; /* Hide text on book button if space is tight */
+  }
+}
